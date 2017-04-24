@@ -6,6 +6,8 @@
 package app.login;
 import app.KeyEvent.key_event;
 import app.pantalla_principal.pantalla_principal;
+import com.sun.glass.events.KeyEvent;
+import javax.swing.JOptionPane;
 /**
  *
  * @author guill
@@ -33,8 +35,8 @@ public class login extends javax.swing.JFrame {
         txt_contraseña = new javax.swing.JPasswordField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btn_iniciar = new javax.swing.JButton();
+        btn_salir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -63,17 +65,17 @@ public class login extends javax.swing.JFrame {
 
         jLabel3.setText("Contraseña");
 
-        jButton1.setText("Iniciar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btn_iniciar.setText("Iniciar");
+        btn_iniciar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btn_iniciarActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Salir");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btn_salir.setText("Salir");
+        btn_salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btn_salirActionPerformed(evt);
             }
         });
 
@@ -98,9 +100,9 @@ public class login extends javax.swing.JFrame {
                         .addGap(115, 115, 115))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(83, 83, 83)
-                .addComponent(jButton2)
+                .addComponent(btn_salir)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(btn_iniciar)
                 .addGap(58, 58, 58))
         );
         layout.setVerticalGroup(
@@ -118,8 +120,8 @@ public class login extends javax.swing.JFrame {
                     .addComponent(jLabel3))
                 .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(btn_iniciar)
+                    .addComponent(btn_salir))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
 
@@ -136,23 +138,32 @@ public class login extends javax.swing.JFrame {
 
     private void txt_usuarioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_usuarioKeyTyped
         key_event.solo_alfabetico(evt);
+        if(evt.getKeyChar() == KeyEvent.VK_ENTER){
+            this.txt_contraseña.getFocusListeners();
+        }
     }//GEN-LAST:event_txt_usuarioKeyTyped
 
     private void txt_contraseñaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_contraseñaKeyTyped
         key_event.solo_numerico(evt);
+        if(evt.getKeyChar() == KeyEvent.VK_ENTER){
+            this.btn_iniciar.doClick();
+        }
     }//GEN-LAST:event_txt_contraseñaKeyTyped
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btn_iniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_iniciarActionPerformed
         if(this.txt_usuario.getText().equals("demo") && this.txt_contraseña.getText().equals("12345")){
             pantalla_principal pp = new pantalla_principal();
             this.dispose();
             pp.show();
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btn_iniciarActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       this.dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
+       int dialogResult = JOptionPane.showConfirmDialog (null, "¿Está seguro que desea salir?");
+        if(dialogResult == JOptionPane.YES_OPTION){
+            this.dispose();
+        } 
+    }//GEN-LAST:event_btn_salirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -190,8 +201,8 @@ public class login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btn_iniciar;
+    private javax.swing.JButton btn_salir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

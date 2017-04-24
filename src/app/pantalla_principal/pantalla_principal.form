@@ -96,31 +96,49 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Inicio"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_inicioActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btn_alta_cliente">
           <Properties>
             <Property name="text" type="java.lang.String" value="Alta de cliente"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_alta_clienteActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btn_catalogo_cliente">
           <Properties>
             <Property name="text" type="java.lang.String" value="Cat&#xe1;logo de cliente"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_catalogo_clienteActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btn_reporte_general">
           <Properties>
             <Property name="text" type="java.lang.String" value="Reporte general"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_reporte_generalActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btn_reporte_acumulado">
           <Properties>
             <Property name="text" type="java.lang.String" value="Reporte acumulado"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_reporte_acumuladoActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btn_configuracion">
           <Properties>
             <Property name="text" type="java.lang.String" value="Configuraci&#xf3;n"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_configuracionActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btn_cerrar_sesion">
           <Properties>

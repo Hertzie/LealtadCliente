@@ -7,17 +7,29 @@ package app.pantalla_principal;
 
 import app.login.login;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  *
  * @author guill
  */
 public class pantalla_principal extends javax.swing.JFrame {
-
+    JPanel repuesto;
+     alta_cliente ac;
+     catalogo_cliente cc;
+     configuracion_frame cf;
+     reporte_general rg;
+     reporte_acumulado ra;
     /**
      * Creates new form pantalla_principal
      */
     public pantalla_principal() {
+        repuesto = new JPanel();
+        ac = new alta_cliente();
+        cc = new catalogo_cliente();
+        cf = new configuracion_frame();
+        rg = new reporte_general();
+        ra = new reporte_acumulado();
         initComponents();
     }
 
@@ -49,16 +61,46 @@ public class pantalla_principal extends javax.swing.JFrame {
         pan_menu.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Menú", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 1, 24), new java.awt.Color(102, 102, 102))); // NOI18N
 
         btn_inicio.setText("Inicio");
+        btn_inicio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_inicioActionPerformed(evt);
+            }
+        });
 
         btn_alta_cliente.setText("Alta de cliente");
+        btn_alta_cliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_alta_clienteActionPerformed(evt);
+            }
+        });
 
         btn_catalogo_cliente.setText("Catálogo de cliente");
+        btn_catalogo_cliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_catalogo_clienteActionPerformed(evt);
+            }
+        });
 
         btn_reporte_general.setText("Reporte general");
+        btn_reporte_general.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_reporte_generalActionPerformed(evt);
+            }
+        });
 
         btn_reporte_acumulado.setText("Reporte acumulado");
+        btn_reporte_acumulado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_reporte_acumuladoActionPerformed(evt);
+            }
+        });
 
         btn_configuracion.setText("Configuración");
+        btn_configuracion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_configuracionActionPerformed(evt);
+            }
+        });
 
         btn_cerrar_sesion.setText("Cerrar sesión");
         btn_cerrar_sesion.addActionListener(new java.awt.event.ActionListener() {
@@ -162,7 +204,6 @@ public class pantalla_principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_cerrar_sesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cerrar_sesionActionPerformed
-        //int dialogButton = 0;
         int dialogResult = JOptionPane.showConfirmDialog (null, "¿Está seguro que desea salir?");
         if(dialogResult == JOptionPane.YES_OPTION){
             login l = new login();
@@ -170,6 +211,53 @@ public class pantalla_principal extends javax.swing.JFrame {
             l.show();
         }
     }//GEN-LAST:event_btn_cerrar_sesionActionPerformed
+
+    private void btn_alta_clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_alta_clienteActionPerformed
+        deleteAll();
+        this.add(ac);
+        ac.setBounds(this.pan_bienvenida.getBounds());
+        ac.updateUI();
+        System.out.println("ac");
+    }//GEN-LAST:event_btn_alta_clienteActionPerformed
+
+    private void btn_inicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_inicioActionPerformed
+        deleteAll();
+        this.add(this.pan_bienvenida);
+        this.pan_bienvenida.setBounds(this.pan_bienvenida.getBounds());
+        this.pan_bienvenida.updateUI();
+    }//GEN-LAST:event_btn_inicioActionPerformed
+
+    private void btn_catalogo_clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_catalogo_clienteActionPerformed
+        deleteAll();
+        this.add(cc);
+        cc.setBounds(this.pan_bienvenida.getBounds());
+        cc.updateUI();
+        System.out.println("cc");
+    }//GEN-LAST:event_btn_catalogo_clienteActionPerformed
+
+    private void btn_reporte_acumuladoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_reporte_acumuladoActionPerformed
+        deleteAll();
+        this.add(ra);
+        ra.setBounds(this.pan_bienvenida.getBounds());
+        ra.updateUI();
+        System.out.println("ra");
+    }//GEN-LAST:event_btn_reporte_acumuladoActionPerformed
+
+    private void btn_reporte_generalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_reporte_generalActionPerformed
+        deleteAll();
+        this.add(rg);
+        rg.setBounds(this.pan_bienvenida.getBounds());
+        rg.updateUI();
+        System.out.println("rg");
+    }//GEN-LAST:event_btn_reporte_generalActionPerformed
+
+    private void btn_configuracionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_configuracionActionPerformed
+        deleteAll();
+        this.add(cf);
+        cf.setBounds(this.pan_bienvenida.getBounds());
+        cf.updateUI();
+        System.out.println("cf");
+    }//GEN-LAST:event_btn_configuracionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -204,6 +292,15 @@ public class pantalla_principal extends javax.swing.JFrame {
                 new pantalla_principal().setVisible(true);
             }
         });
+    }
+    
+    private void deleteAll(){
+        this.remove(cc);
+        this.remove(ac);
+        this.remove(ra);
+        this.remove(rg);
+        this.remove(cf);
+        this.remove(this.pan_bienvenida);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
