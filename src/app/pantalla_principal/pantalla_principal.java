@@ -24,13 +24,13 @@ public class pantalla_principal extends javax.swing.JFrame {
      * Creates new form pantalla_principal
      */
     public pantalla_principal() {
+        initComponents();
         repuesto = new JPanel();
-        ac = new alta_cliente();
-        cc = new catalogo_cliente();
+        ac = new alta_cliente(this.btn_inicio);
+        cc = new catalogo_cliente(this.btn_inicio);
         cf = new configuracion_frame();
         rg = new reporte_general();
         ra = new reporte_acumulado();
-        initComponents();
     }
 
     /**
@@ -301,6 +301,10 @@ public class pantalla_principal extends javax.swing.JFrame {
         this.remove(rg);
         this.remove(cf);
         this.remove(this.pan_bienvenida);
+    }
+    
+    public static void setPanBienvenida(){
+        //this.btn_inicio.doClick();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
