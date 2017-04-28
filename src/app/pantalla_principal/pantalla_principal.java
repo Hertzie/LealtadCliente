@@ -20,6 +20,7 @@ public class pantalla_principal extends javax.swing.JFrame {
      configuracion_frame cf;
      reporte_general rg;
      reporte_acumulado ra;
+     
     /**
      * Creates new form pantalla_principal
      */
@@ -31,6 +32,7 @@ public class pantalla_principal extends javax.swing.JFrame {
         cf = new configuracion_frame();
         rg = new reporte_general();
         ra = new reporte_acumulado();
+        this.cmb_configuracion.setRenderer(null);
     }
 
     /**
@@ -48,9 +50,9 @@ public class pantalla_principal extends javax.swing.JFrame {
         btn_catalogo_cliente = new javax.swing.JButton();
         btn_reporte_general = new javax.swing.JButton();
         btn_reporte_acumulado = new javax.swing.JButton();
-        btn_configuracion = new javax.swing.JButton();
         btn_cerrar_sesion = new javax.swing.JButton();
         imagen_gym = new javax.swing.JLabel();
+        cmb_configuracion = new javax.swing.JComboBox<>();
         pan_bienvenida = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -95,13 +97,6 @@ public class pantalla_principal extends javax.swing.JFrame {
             }
         });
 
-        btn_configuracion.setText("Configuración");
-        btn_configuracion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_configuracionActionPerformed(evt);
-            }
-        });
-
         btn_cerrar_sesion.setText("Cerrar sesión");
         btn_cerrar_sesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -110,6 +105,9 @@ public class pantalla_principal extends javax.swing.JFrame {
         });
 
         imagen_gym.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/resources/images/imagenGym.jpg"))); // NOI18N
+
+        cmb_configuracion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Configuración", "Empresa", "Buscar Usuario", "Agregar usuario" }));
+        cmb_configuracion.setToolTipText("");
 
         javax.swing.GroupLayout pan_menuLayout = new javax.swing.GroupLayout(pan_menu);
         pan_menu.setLayout(pan_menuLayout);
@@ -120,12 +118,12 @@ public class pantalla_principal extends javax.swing.JFrame {
             .addComponent(btn_catalogo_cliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btn_reporte_acumulado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btn_reporte_general, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btn_configuracion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btn_cerrar_sesion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(pan_menuLayout.createSequentialGroup()
                 .addGap(46, 46, 46)
                 .addComponent(imagen_gym)
                 .addContainerGap(48, Short.MAX_VALUE))
+            .addComponent(cmb_configuracion, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         pan_menuLayout.setVerticalGroup(
             pan_menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -141,10 +139,10 @@ public class pantalla_principal extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(btn_reporte_general)
                 .addGap(18, 18, 18)
-                .addComponent(btn_configuracion)
+                .addComponent(cmb_configuracion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btn_cerrar_sesion)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
                 .addComponent(imagen_gym)
                 .addGap(59, 59, 59))
         );
@@ -251,14 +249,6 @@ public class pantalla_principal extends javax.swing.JFrame {
         System.out.println("rg");
     }//GEN-LAST:event_btn_reporte_generalActionPerformed
 
-    private void btn_configuracionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_configuracionActionPerformed
-        deleteAll();
-        this.add(cf);
-        cf.setBounds(this.pan_bienvenida.getBounds());
-        cf.updateUI();
-        System.out.println("cf");
-    }//GEN-LAST:event_btn_configuracionActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -302,19 +292,15 @@ public class pantalla_principal extends javax.swing.JFrame {
         this.remove(cf);
         this.remove(this.pan_bienvenida);
     }
-    
-    public static void setPanBienvenida(){
-        //this.btn_inicio.doClick();
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_alta_cliente;
     private javax.swing.JButton btn_catalogo_cliente;
     private javax.swing.JButton btn_cerrar_sesion;
-    private javax.swing.JButton btn_configuracion;
     private javax.swing.JButton btn_inicio;
     private javax.swing.JButton btn_reporte_acumulado;
     private javax.swing.JButton btn_reporte_general;
+    private javax.swing.JComboBox<String> cmb_configuracion;
     private javax.swing.JLabel imagen_gym;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;

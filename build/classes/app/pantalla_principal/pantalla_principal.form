@@ -58,13 +58,13 @@
               <Component id="btn_catalogo_cliente" alignment="0" max="32767" attributes="0"/>
               <Component id="btn_reporte_acumulado" alignment="0" max="32767" attributes="0"/>
               <Component id="btn_reporte_general" alignment="0" max="32767" attributes="0"/>
-              <Component id="btn_configuracion" max="32767" attributes="0"/>
               <Component id="btn_cerrar_sesion" alignment="0" max="32767" attributes="0"/>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                   <Component id="imagen_gym" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="48" max="32767" attributes="0"/>
               </Group>
+              <Component id="cmb_configuracion" alignment="0" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -81,10 +81,10 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="btn_reporte_general" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="btn_configuracion" min="-2" max="-2" attributes="0"/>
+                  <Component id="cmb_configuracion" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="btn_cerrar_sesion" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="63" max="32767" attributes="0"/>
+                  <EmptySpace pref="66" max="32767" attributes="0"/>
                   <Component id="imagen_gym" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
               </Group>
@@ -132,14 +132,6 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_reporte_acumuladoActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btn_configuracion">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Configuraci&#xf3;n"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_configuracionActionPerformed"/>
-          </Events>
-        </Component>
         <Component class="javax.swing.JButton" name="btn_cerrar_sesion">
           <Properties>
             <Property name="text" type="java.lang.String" value="Cerrar sesi&#xf3;n"/>
@@ -154,6 +146,22 @@
               <Image iconType="3" name="/app/resources/images/imagenGym.jpg"/>
             </Property>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="cmb_configuracion">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="4">
+                <StringItem index="0" value="Configuraci&#xf3;n"/>
+                <StringItem index="1" value="Empresa"/>
+                <StringItem index="2" value="Buscar Usuario"/>
+                <StringItem index="3" value="Agregar usuario"/>
+              </StringArray>
+            </Property>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>
